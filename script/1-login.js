@@ -10,12 +10,12 @@ loginBtn.addEventListener('click',
 
         if (accountNumber.length === 11) {
             if (convertedPIN === 1234) {
-                console.log('PIN thik ache');
+                // console.log('PIN thik ache');
                 window.location.href="./main.html";// redirecting to HomePage
             } else {
                 console.log('PIN thik nai')
             }
         }else{
-            console.log('Give valid Phone Number');
+            console.log('Give valid PIN Number');
         }
     });
