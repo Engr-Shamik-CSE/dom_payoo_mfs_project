@@ -42,16 +42,19 @@
                 </div>
 
                 <div class="cards grid grid-cols-3 p-5 gap-4 cursor-pointer">
+                    <!-- Add Money Card (Active by Default) -->
                     <div id="add-money-card"
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
+                        class="box py-6 border text-center rounded-lg border-blue-700 text-blue-700">
                         <img class="w-8 mx-auto" src="./assests/main-add-money.png" alt="">
                         <p class="">Add Money</p>
                     </div>
+                    <!-- Cash Out Card -->
                     <div id="cash-out-card"
                         class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
                         <img class="w-8 mx-auto" src="./assests/main-cash-out.png" alt="">
                         <p class="">Cash Out</p>
                     </div>
+                    <!-- Other Cards -->
                     <div
                         class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
                         <img class="w-8 mx-auto" src="./assests/main-transfer-money.png" alt="">
@@ -72,12 +75,11 @@
                         <img class="w-8 mx-auto" src="./assests/main-transactions.png" alt="">
                         <p class="">Transactions</p>
                     </div>
-                    
                 </div>
             </section>
         </header>
         <!-- end of common style -->
-        <!-- add money section -->
+        <!-- add money section (Visible by Default) -->
         <section id="add-money-section" class="add-money p-5">
             <h1 class="font-bold">Add money</h1>
 
@@ -129,9 +131,9 @@
             <div>
 
             </div>
-        </section>
+        </section><!-- End of Add Money section -->
 
-        <!-- cash out section -->
+        <!-- cash out section (Hidden by Default) -->
         <section id="cash-out-section" class="cashOut p-5 hidden">
             <h1 class="font-bold">Cash Out</h1>
 
@@ -149,7 +151,7 @@
 
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Amount to
                                     cashout</label>
-                                <input id="amount" type="text"
+                                <input id="cashout-amount" type="text"
                                     class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
                                     placeholder="Add Amount to withdraw" />
 
@@ -161,7 +163,7 @@
 
                                 <div><a class="link link-hover">Forgot pin?</a></div>
 
-                                <button id="add-money"
+                                <button id="btn-withdraw"
                                     class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl text-white text-xl py-6">Withdraw
                                     Money</button>
                             </fieldset>
@@ -172,31 +174,53 @@
             <div>
 
             </div>
-        </section>
-    </section>
+        </section> <!-- End cash out section -->
+
     <script src="./script/2-add-money.js"></script>
+    <script src="./script/3-cashout.js"></script>
 
-    <script>// style script
-    document.addEventListener('DOMContentLoaded', function() {
-    const addMoneyCard = document.getElementById('add-money-card');
-    const cashOutCard = document.getElementById('cash-out-card');
-    const addMoneySection = document.getElementById('add-money-section');
-    const cashOutSection = document.getElementById('cash-out-section');
-
-    addMoneyCard.addEventListener('click', function() {
-        addMoneyCard.classList.add('!border-blue-700', 'text-blue-700');
-        cashOutCard.classList.remove('!border-blue-700', 'text-blue-700');
-        addMoneySection.classList.remove('hidden');
-        cashOutSection.classList.add('hidden');
-    });
-
-    cashOutCard.addEventListener('click', function() {
-        cashOutCard.classList.add('!border-blue-700', 'text-blue-700');
-        addMoneyCard.classList.remove('!border-blue-700', 'text-blue-700');
-        cashOutSection.classList.remove('hidden');
-        addMoneySection.classList.add('hidden');
-    });
-});
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addMoneyCard = document.getElementById('add-money-card');
+            const cashOutCard = document.getElementById('cash-out-card');
+            const addMoneySection = document.getElementById('add-money-section');
+            const cashOutSection = document.getElementById('cash-out-section');
+    
+            // Set "Add Money" as active by default
+            addMoneyCard.classList.remove('border-slate-200'); // Remove default border
+            addMoneyCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
+            addMoneySection.classList.remove('hidden'); // Show add money section
+            cashOutSection.classList.add('hidden'); // Hide cash out section
+    
+            // Add event listeners for card clicks
+            addMoneyCard.addEventListener('click', function() {
+                // Activate "Add Money" card
+                addMoneyCard.classList.remove('border-slate-200'); // Remove default border
+                addMoneyCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
+    
+                // Deactivate "Cash Out" card
+                cashOutCard.classList.remove('border-blue-700', 'text-blue-700'); // Remove active styles
+                cashOutCard.classList.add('border-slate-200'); // Add default border
+    
+                // Show "Add Money" section and hide "Cash Out" section
+                addMoneySection.classList.remove('hidden');
+                cashOutSection.classList.add('hidden');
+            });
+    
+            cashOutCard.addEventListener('click', function() {
+                // Activate "Cash Out" card
+                cashOutCard.classList.remove('border-slate-200'); // Remove default border
+                cashOutCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
+    
+                // Deactivate "Add Money" card
+                addMoneyCard.classList.remove('border-blue-700', 'text-blue-700'); // Remove active styles
+                addMoneyCard.classList.add('border-slate-200'); // Add default border
+    
+                // Show "Cash Out" section and hide "Add Money" section
+                cashOutSection.classList.remove('hidden');
+                addMoneySection.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 
