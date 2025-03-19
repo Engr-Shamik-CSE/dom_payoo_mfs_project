@@ -1,28 +1,54 @@
-document.getElementById('add-money').addEventListener('click',
-    function (event) {
-        event.preventDefault(); // to stop the default refreshing problem of the form
-        const amount = document.getElementById('amount').value;
-        const convertedAmount = parseInt(amount);
-        console.log(convertedAmount);
+// Add Money Form Validation
+document.getElementById('add-money').addEventListener('click', function () {
+    // Reset error messages
+    document.querySelectorAll('.text-red-500').forEach(function (el) {
+        el.classList.add('hidden');
+    });
 
-        const pin = document.getElementById('pin').value;
-        const convertedPIN = parseInt(pin);
-        console.log(convertedPIN);
-
-        const mainBalance = document.getElementById('main-balance').innerText;
-        const convertedMainBalance = parseFloat(mainBalance);
-        console.log(convertedMainBalance);
-        if (amount && pin) { //value empty kina check kora
-            if (convertedPIN === 1234) {
-                let sum = convertedMainBalance + convertedAmount;
-                document.getElementById('main-balance').innerText = sum;
-                console.log(sum);
-                document.getElementById('amount').value = ''; //to empty the amount input field
-            } else {
-                alert('Wrong!, Give valid PIN Number');
-            }
-        } else {
-            alert("Give amount and PIN correctly");
-        }
+    // Validate Bank Selection
+    const bankSelect = document.getElementById('bankSelect');
+    if (bankSelect.value === "") {
+        document.getElementById('bank-error').classList.remove('hidden');
+        return;
     }
-);
+
+    // Validate Bank Account Number
+    const accountNumber = document.getElementById('account-number').value;
+    if (accountNumber.length !== 11 || isNaN(accountNumber)) {
+        document.getElementById('account-error').classList.remove('hidden');
+        return;
+    }
+
+    // Validate Amount
+    const amountInput = document.getElementById('amount');
+    const amount = parseFloat(amountInput.value);
+    if (amount <= 0 || isNaN(amount)) {
+        document.getElementById('amount-error').classList.remove('hidden');
+        return;
+    }
+
+    // Validate Pin Number
+    const pin = document.getElementById('pin').value;
+    if (pin.length !== 4 || isNaN(pin)) {
+        document.getElementById('pin-error').classList.remove('hidden');
+        return;
+    }
+
+    // Update Main Balance
+    const mainBalanceElement = document.getElementById('main-balance');
+    const currentBalance = parseFloat(mainBalanceElement.textContent);
+    const newBalance = currentBalance + amount;
+
+    // Update the balance display
+    mainBalanceElement.textContent = newBalance.toFixed(2);
+
+    // Add transaction to history
+    addTransaction('add', amount, 'Bank Deposit');
+
+    // Show success message
+    alert(`Amount added successfully! New balance: $${newBalance.toFixed(2)}`);
+
+    // Clear the form
+    amountInput.value = '';
+    document.getElementById('pin').value = '';
+});

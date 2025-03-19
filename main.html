@@ -4,221 +4,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main.html</title>
-    <!-- add daisyUI cdn which include tailwind css -->
+    <title>Payooo - Financial Services</title>
+    <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-slate-800">
-    <!-- copy the same style from index.html -->
-    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200 ">
-        <header class="bg-[#FFFFFF] -mt-[18px] py-[20px] rounded-br-3xl rounded-bl-3xl">
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
+        <!-- Header Section -->
+        <header class="bg-white -mt-[18px] py-[20px] rounded-br-3xl rounded-bl-3xl">
             <nav class="flex justify-between items-center px-5 border-b-1 border-slate-200 pb-3">
-                <div class="flex justify-between items-center ">
+                <div class="flex justify-between items-center">
                     <div>
-                        <img class="w-10/12" src="./assests/main-logo.png" alt="">
+                        <img class="w-10/12" src="./assests/main-logo.png" alt="Payooo Logo">
                     </div>
-
                     <div>
-                        <h1 class="text-2xl font-bold">$<span id="main-balance">45000</span></h1>
+                        <h1 class="text-2xl font-bold">$<span id="main-balance">45000.00</span></h1>
                         <p class="text-slate-500"><a href="#">Available Balance</a></p>
                     </div>
                 </div>
                 <div>
-                    <button class="btn bg-white rounded-xl text-slate-500"><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <button class="btn bg-white rounded-xl text-slate-500 hover:bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
                         </svg>
-                        Log Out</button>
+                        Log Out
+                    </button>
                 </div>
             </nav>
+
+            <!-- Welcome Section -->
             <section class="mt-10">
                 <div class="p-5">
                     <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
                     <p class="text-slate-600">Enjoy easy and convenient financial services with us. Cashout charge is
-                        low and </p>
+                        low and secure.</p>
                 </div>
-
+                <!-- Action Cards -->
                 <div class="cards grid grid-cols-3 p-5 gap-4 cursor-pointer">
-                    <!-- Add Money Card (Active by Default) -->
                     <div id="add-money-card"
-                        class="box py-6 border text-center rounded-lg border-blue-700 text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-add-money.png" alt="">
-                        <p class="">Add Money</p>
+                        class="box py-6 border text-center rounded-lg border-blue-700 text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-add-money.png" alt="Add Money">
+                        <p class="mt-2">Add Money</p>
                     </div>
-                    <!-- Cash Out Card -->
                     <div id="cash-out-card"
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-cash-out.png" alt="">
-                        <p class="">Cash Out</p>
-                    </div>
-                    <!-- Other Cards -->
-                    <div
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-transfer-money.png" alt="">
-                        <p class="">Transfer Money</p>
+                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-cash-out.png" alt="Cash Out">
+                        <p class="mt-2">Cash Out</p>
                     </div>
                     <div
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-get-bonus.png" alt="">
-                        <p class="">Get Bonus</p>
+                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-transfer-money.png" alt="Transfer Money">
+                        <p class="mt-2">Transfer Money</p>
                     </div>
                     <div
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-paybill.png" alt="">
-                        <p class="">Pay Bill</p>
+                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-get-bonus.png" alt="Get Bonus">
+                        <p class="mt-2">Get Bonus</p>
                     </div>
                     <div
-                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700">
-                        <img class="w-8 mx-auto" src="./assests/main-transactions.png" alt="">
-                        <p class="">Transactions</p>
+                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-paybill.png" alt="Pay Bill">
+                        <p class="mt-2">Pay Bill</p>
+                    </div>
+                    <div id="transactions-card"
+                        class="box py-6 border text-center rounded-lg border-slate-200 hover:border-blue-700 hover:text-blue-700 hover:bg-blue-50">
+                        <img class="w-8 mx-auto" src="./assests/main-transactions.png" alt="Transactions">
+                        <p class="mt-2">Transactions</p>
                     </div>
                 </div>
             </section>
         </header>
-        <!-- end of common style -->
-        <!-- add money section (Visible by Default) -->
+
+        <!-- Add Money Section -->
         <section id="add-money-section" class="add-money p-5">
-            <h1 class="font-bold">Add money</h1>
-
-            <div class="">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-
-                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-3xl">
-                        <div class="card-body">
-                            <fieldset class="fieldset">
-
+            <h1 class="font-bold mb-6">Add Money</h1>
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-3xl">
+                    <div class="card-body space-y-3">
+                        <form id="money-form" class="space-y-3">
+                            <!-- Bank Selection -->
+                            <div>
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Select A
                                     Bank</label>
-                                <select class="select border-0 bg-slate-100 rounded-3xl">
-                                    <option disabled selected class="text-[#cfcbcb] text-[10px] font-semibold">Select
-                                        Bank</option>
+                                <select id="bankSelect" class="select border-0 bg-slate-100 rounded-3xl w-full mt-2"
+                                    required>
+                                    <option disabled selected value="">Select Bank</option>
                                     <option value="bkash">Bkash</option>
                                     <option value="nagad">Nagad</option>
                                     <option value="dbbl">DBBL</option>
                                 </select>
+                                <div id="bank-error" class="text-red-500 text-sm hidden mt-2">Please select a bank.
+                                </div>
+                            </div>
 
+                            <!-- Bank Account Number -->
+                            <div>
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Bank Account
                                     Number</label>
-                                <input type="number" value="01686117647"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Enter 11 digit account number" />
+                                <input id="account-number" type="number"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Enter 11 digit account number" required minlength="11" maxlength="11">
+                                <div id="account-error" class="text-red-500 text-sm hidden mt-2">Please enter a valid
+                                    11-digit account number.</div>
+                            </div>
 
+                            <!-- Amount to Add -->
+                            <div>
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Amount to
                                     Add</label>
-                                <input id="amount" type="text"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Add Amount to withdraw" />
+                                <input id="amount" type="number"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Add Amount to withdraw" required min="1">
+                                <div id="amount-error" class="text-red-500 text-sm hidden mt-2">Please enter a valid
+                                    amount (greater than 0).</div>
+                            </div>
 
+                            <!-- Pin Number -->
+                            <div>
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Pin
                                     Number</label>
-                                <input id="pin" type="text" value="1234"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Enter 4 digit pin number" />
+                                <input id="pin" type="password"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Enter 4 digit pin number" required minlength="4" maxlength="4">
+                                <div id="pin-error" class="text-red-500 text-sm hidden mt-2">Please enter a valid
+                                    4-digit PIN.</div>
+                                <div>
+                                    <a class="link link-hover text-blue-500">Forgot pin?</a>
+                                </div>
+                            </div>
 
-                                <div><a class="link link-hover">Forgot pin?</a></div>
-
-                                <button id="add-money"
-                                    class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl text-white text-xl py-6">Add
-                                    Money</button>
-                            </fieldset>
-                        </div>
+                            <!-- Add Money Button -->
+                            <button type="button" id="add-money"
+                                class="btn btn-neutral bg-blue-500 border-0 rounded-3xl text-white text-xl py-6 w-full hover:bg-blue-600">Add
+                                Money</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div>
+        </section>
 
-            </div>
-        </section><!-- End of Add Money section -->
-
-        <!-- cash out section (Hidden by Default) -->
+        <!-- Cash Out Section -->
         <section id="cash-out-section" class="cashOut p-5 hidden">
-            <h1 class="font-bold">Cash Out</h1>
+            <h1 class="font-bold mb-6">Cash Out</h1>
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-3xl">
+                    <div class="card-body space-y-6">
+                        <form id="cashout-form" class="space-y-6">
+                            <!-- Agent Number -->
+                            <div>
+                                <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Agent
+                                    Number</label>
+                                <input id="agent-number" type="number"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Enter 11 digit account number" required minlength="11" maxlength="11">
+                                <div id="agent-error" class="text-red-500 text-sm hidden mt-2">Please enter a valid
+                                    11-digit agent number.</div>
+                            </div>
 
-            <div class="">
-                <div class="hero-content flex-col lg:flex-row-reverse">
+                            <!-- Amount to Cash Out -->
+                            <div>
+                                <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Amount to Cash
+                                    Out</label>
+                                <input id="cashout-amount" type="number"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Add Amount to withdraw" required min="1">
+                                <div id="cashout-amount-error" class="text-red-500 text-sm hidden mt-2">Please enter a
+                                    valid amount (greater than 0).</div>
+                            </div>
 
-                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-3xl">
-                        <div class="card-body">
-                            <fieldset class="fieldset">
-
-                                <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Agent Number</label>
-                                <input type="number" value="01686117647"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Enter 11 digit account number" />
-
-                                <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Amount to
-                                    cashout</label>
-                                <input id="cashout-amount" type="text"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Add Amount to withdraw" />
-
+                            <!-- Pin Number -->
+                            <div>
                                 <label class="fieldset-label text-[#080808] text-[10px] font-semibold">Pin
                                     Number</label>
-                                <input id="pin" type="text" value="1234"
-                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px]"
-                                    placeholder="Enter 4 digit pin number" />
+                                <input id="cashout-pin" type="password"
+                                    class="input border-0 bg-slate-100 rounded-3xl text-[#080808] text-[10px] font-semibold p-[12px] w-full mt-2"
+                                    placeholder="Enter 4 digit pin number" required minlength="4" maxlength="4">
+                                <div id="cashout-pin-error" class="text-red-500 text-sm hidden mt-2">Please enter a
+                                    valid 4-digit PIN.</div>
+                                <div>
+                                    <a class="link link-hover text-blue-500">Forgot pin?</a>
+                                </div>
+                            </div>
 
-                                <div><a class="link link-hover">Forgot pin?</a></div>
-
-                                <button id="btn-withdraw"
-                                    class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl text-white text-xl py-6">Withdraw
-                                    Money</button>
-                            </fieldset>
-                        </div>
+                            <!-- Withdraw Money Button -->
+                            <button type="button" id="btn-withdraw"
+                                class="btn btn-neutral bg-blue-500 border-0 rounded-3xl text-white text-xl py-6 w-full hover:bg-blue-600">Withdraw
+                                Money</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div>
+        </section>
 
+        <!-- Transactions Section -->
+        <section id="transactions-section" class="transactions p-5 hidden">
+            <h1 class="font-bold mb-6">Transaction History</h1>
+            <div id="transaction-list" class="space-y-4">
+                <!-- Transactions will be dynamically appended here -->
             </div>
-        </section> <!-- End cash out section -->
-
+        </section>
+    </section>
+    <script src="./script/4-transitions.js"></script>
     <script src="./script/2-add-money.js"></script>
     <script src="./script/3-cashout.js"></script>
-
-    <script>  //styling script
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        // Card Toggle Script
+        document.addEventListener('DOMContentLoaded', function () {
             const addMoneyCard = document.getElementById('add-money-card');
             const cashOutCard = document.getElementById('cash-out-card');
+            const transactionsCard = document.getElementById('transactions-card');
             const addMoneySection = document.getElementById('add-money-section');
             const cashOutSection = document.getElementById('cash-out-section');
-    
+            const transactionsSection = document.getElementById('transactions-section');
+
             // Set "Add Money" as active by default
-            addMoneyCard.classList.remove('border-slate-200'); // Remove default border
-            addMoneyCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
-            addMoneySection.classList.remove('hidden'); // Show add money section
-            cashOutSection.classList.add('hidden'); // Hide cash out section
-    
+            addMoneyCard.classList.remove('border-slate-200');
+            addMoneyCard.classList.add('border-blue-700', 'text-blue-700');
+            addMoneySection.classList.remove('hidden');
+            cashOutSection.classList.add('hidden');
+            transactionsSection.classList.add('hidden');
+
             // Add event listeners for card clicks
-            addMoneyCard.addEventListener('click', function() {
-                // Activate "Add Money" card
-                addMoneyCard.classList.remove('border-slate-200'); // Remove default border
-                addMoneyCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
-    
-                // Deactivate "Cash Out" card
-                cashOutCard.classList.remove('border-blue-700', 'text-blue-700'); // Remove active styles
-                cashOutCard.classList.add('border-slate-200'); // Add default border
-    
-                // Show "Add Money" section and hide "Cash Out" section
+            addMoneyCard.addEventListener('click', function () {
+                addMoneyCard.classList.remove('border-slate-200');
+                addMoneyCard.classList.add('border-blue-700', 'text-blue-700');
+                cashOutCard.classList.remove('border-blue-700', 'text-blue-700');
+                cashOutCard.classList.add('border-slate-200');
+                transactionsCard.classList.remove('border-blue-700', 'text-blue-700');
+                transactionsCard.classList.add('border-slate-200');
                 addMoneySection.classList.remove('hidden');
                 cashOutSection.classList.add('hidden');
+                transactionsSection.classList.add('hidden');
             });
-    
-            cashOutCard.addEventListener('click', function() {
-                // Activate "Cash Out" card
-                cashOutCard.classList.remove('border-slate-200'); // Remove default border
-                cashOutCard.classList.add('border-blue-700', 'text-blue-700'); // Add active styles
-    
-                // Deactivate "Add Money" card
-                addMoneyCard.classList.remove('border-blue-700', 'text-blue-700'); // Remove active styles
-                addMoneyCard.classList.add('border-slate-200'); // Add default border
-    
-                // Show "Cash Out" section and hide "Add Money" section
+
+            cashOutCard.addEventListener('click', function () {
+                cashOutCard.classList.remove('border-slate-200');
+                cashOutCard.classList.add('border-blue-700', 'text-blue-700');
+                addMoneyCard.classList.remove('border-blue-700', 'text-blue-700');
+                addMoneyCard.classList.add('border-slate-200');
+                transactionsCard.classList.remove('border-blue-700', 'text-blue-700');
+                transactionsCard.classList.add('border-slate-200');
                 cashOutSection.classList.remove('hidden');
                 addMoneySection.classList.add('hidden');
+                transactionsSection.classList.add('hidden');
+            });
+
+            transactionsCard.addEventListener('click', function () {
+                transactionsCard.classList.remove('border-slate-200');
+                transactionsCard.classList.add('border-blue-700', 'text-blue-700');
+                addMoneyCard.classList.remove('border-blue-700', 'text-blue-700');
+                addMoneyCard.classList.add('border-slate-200');
+                cashOutCard.classList.remove('border-blue-700', 'text-blue-700');
+                cashOutCard.classList.add('border-slate-200');
+                transactionsSection.classList.remove('hidden');
+                addMoneySection.classList.add('hidden');
+                cashOutSection.classList.add('hidden');
             });
         });
     </script>
